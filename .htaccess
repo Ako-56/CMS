@@ -1,0 +1,11 @@
+RewriteEngine on
+
+	# Rewrite rule to remove ".php" extension from URLs
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^([^\.]+)$ $1.php [NC,L] 
+
+	# Rewrite rule to map clean URLs to actual URLs with query string parameters
+	RewriteRule ^youth_portal/officials/([a-zA-Z0-9+/=]+)$ youth_portal/officials?q=$1 [L]
+
+
+	 
